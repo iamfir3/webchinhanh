@@ -11,7 +11,7 @@ body{
   padding: 2rem;
 }
 .home-container {
-  background-image: linear-gradient(to left bottom, rgba(126, 213, 111, 0.2), rgba(40, 180, 133, 0.3)),url(/assets/img/home2.svg);
+  background-image: linear-gradient(to left bottom, rgba(126, 213, 111, 0.2), rgba(40, 180, 133, 0.3)),url(../img/home2.svg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 95vh;
