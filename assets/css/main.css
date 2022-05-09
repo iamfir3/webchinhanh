@@ -82,6 +82,9 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
+  border-radius: 2rem;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
 }
 
 .function{
@@ -94,6 +97,8 @@ body{
   display:flex;
   height:calc(100%/9);
   justify-content: center;
+  align-items: center;
+  margin-bottom: .8rem;
 }
 
 .item-left{
@@ -126,7 +131,7 @@ body{
   height:3rem;
   position: absolute;
   top: 1rem;
-  left: 1rem;
+  left: 2rem;
 }
 
 .img{
