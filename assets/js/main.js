@@ -2,6 +2,7 @@ var img = new Image();
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 var fileName = "";
+let cropper;
 let funcValue={
   bright:100,
   contrast:100,
@@ -11,6 +12,8 @@ let funcValue={
   saturate:100,
   invert:0
 }
+let croppedBtn= document.querySelector('.cropCanvas');
+let croppedCanvas=null;
 $(document).ready(function() {
         $(".brightSlider").on("input", function(e) {
             let bright =document.querySelector(".brightSlider");
@@ -68,6 +71,19 @@ $(document).ready(function() {
             invertValue.textContent=value;
             render(funcValue,img);
           });
+let crop=document.querySelector("#crop");
+crop.onclick = (e)=>{
+  cropper = new Cropper(canvas,{
+  
+  });
+  croppedBtn.classList.remove("disable");
+}
+
+croppedBtn.onclick = (e)=>{
+  croppedCanvas=cropper.getCroppedCanvas();
+  canvas=croppedCanvas;
+  alert("Đã cắt xong!");
+}
 
   $(".download").on("click", function(e) {
     var fileExtension = fileName.slice(-4);
@@ -100,7 +116,6 @@ $(document).ready(function() {
       },
       false
     );
-
     let homeContainer=document.querySelector(".home-container");
     homeContainer.classList.add("disable");
     let processContainer=document.querySelector(".process");

@@ -194,3 +194,10 @@ canvas {
   font-weight:500;
   padding-top: 0.5rem;
 }
+
+.moveDown{
+  transition: .2s;
+}
+.moveDown:active{
+  transform: translateY(.3rem);
+}

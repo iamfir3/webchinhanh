@@ -9,26 +9,28 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/cropper.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.min.js"></script>
     <div class="home-container ">
         <div class="container">
             <h1 class="heading">Trình chỉnh sửa ảnh miễn phí cho mọi người</h1>
             <h4 class="heading-des">Miễn phí chỉnh sửa ảnh với trình chỉnh sửa ảnh chỉ trong vài cú nhấp chuột. Bao gồm tất cả các công cụ chỉnh sửa ảnh trực tuyến, vì vậy bạn có thể cắt hình ảnh, thay đổi kích thước hình ảnh, thậm chí tạo ảnh ghép và tạo thiết kế đồ họa một cách dễ dàng.</h4>
             
-            <input type="file" class="btn btn--white upload" placeholder="Upload a Picture" />
+            <input type="file" class="btn btn--white upload" placeholder="Tải ảnh lên" />
             <label for="btn btn--white upload" 
             style="color:#fff;
             font-size:1.8rem;
             font-weight:500;
             padding-top:1rem;
-            ">Upload a Picture</label>
+            ">Tải ảnh lên</label>
         </div>
     </div>  
 
     <div class="process disable">
-        <div class="home">
+        <div class="home moveDown">
            <a href="" class="home-link">
                <img src="./assets/img/bxs_home.svg" alt="" class="function-icon home-icon">
            </a>
@@ -86,9 +88,9 @@
                 <div class="function-item">
                     <img src="assets/img/gridicons_crop.svg" alt="" class="function-icon">
                     <div class="item-left">
-                        <span class="function-title">Cắt</span>
-                        <input type="range" min="0" max="100" value="0" class="sliderRange">
-                        <div class="selectValue"></div>
+                        <span class="function-title moveDown" style="cursor: pointer;" id="crop">Cắt</span>
+                        <!-- <input type="range" min="0" max="100" value="0" class="sliderRange">
+                        <div class="selectValue"></div> -->
                     </div>
                 </div>
                 <div class="function-item">
@@ -105,12 +107,14 @@
             <div class="preview-wrapper" style="padding-bottom: 1rem;">
                 <canvas id="canvas"></canvas>
               </div>
-                <button class="btn btn--white download">Download Image</button>
+              <div class="buttonContainer">
+                  <button class="btn btn--white cropCanvas disable" style="margin-right: .5rem;">Lưu crop</button>
+                  <button class="btn btn--white download ">Tải về</button>
+              </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js" integrity="sha512-JjFeUD2H//RHt+DjVf1BTuy1X5ZPtMl0svQ3RopX641DWoSilJ89LsFGq4Sw/6BSBfULqUW/CfnVopV5CfvRXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://unpkg.com/react-image-crop/dist/ReactCrop.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>
