@@ -120,7 +120,10 @@ croppedBtn.onclick = (e)=>{
     homeContainer.classList.add("disable");
     let processContainer=document.querySelector(".process");
     processContainer.classList.remove("disable");
+    alert("Vui lòng chỉnh sửa ảnh trước khi cắt!!!");
   });
+
+  
 });
 
 function download(canvas, filename) {
